@@ -18,7 +18,7 @@
 <body bgcolor="#2F1D00">
     <?php 
         require("./component/header/header.php");
-        require("./component/navbar/nav.html");
+        require("./component/navbar/nav.php");
     ?>
     <div class="content">
         <div class="form-container">
