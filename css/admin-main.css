@@ -1,0 +1,162 @@
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Admin Info Box */
+.admin-info {
+    width: 900px;
+    text-align: center;
+    color: antiquewhite;
+    margin-top: 50px;
+}
+
+.admin-info img {
+    width: 150px;
+    height: 150px;
+    background-color: #c8c8c8;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.edit-button {
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: #2C2C2C;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.w32 {
+    font-size: 28px;
+}
+
+/* Booking Info Box */
+.tempahan-info {
+    margin-top: 50px;
+    background-color: #EA9554;
+    width: 900px;
+    border-radius: 20px;
+    padding: 20px;
+    color: #3F2B08;
+}
+
+/* Label styling */
+.label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.status .green {
+    color: #25D366;
+}
+
+.status .red {
+    color: #9B0000;
+}
+
+/* Slot box styling */
+.slot-box {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    padding: 15px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 5px; 
+    font-size: 18px;
+    color: #1a1a1a;
+    position: relative;
+    background-color: #d3d3d3;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-container::after {
+    content: '';
+    padding-right: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 8px;
+    border-bottom-right-radius: 10px;
+}
+
+.bc-green::after {
+    background-color: #25D366;
+}
+
+.bc-red::after {
+    background-color: #9B0000;
+}
+
+/* Add Slot form */
+.add-slot {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-slot input[type="date"], 
+.add-slot input[type="text"] {
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #3F2B08;
+    border-radius: 5px;
+}
+
+.add-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #005208;
+    color: #FFF;
+    border: none;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    cursor: pointer;
+}
+
+/* Booking List table styling */
+.booking-list {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 15px;
+    width: 100%;
+}
+
+.booking-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.booking-list th,
+.booking-list td {
+    padding: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.booking-list th {
+    font-weight: bold;
+}
