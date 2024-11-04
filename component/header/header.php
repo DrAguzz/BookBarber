@@ -5,5 +5,5 @@
         </div>
         <div class="text"><h1 class="k2d-bold">Barber Book</h1></div>
         <!-- Admin login link -->
-        <a href="admin_login.html" class="admin-link">Admin</a>
+        <a href="admin-login.php" class="admin-link">Admin</a>
     </div>

@@ -29,7 +29,7 @@
                 <p class="w32 k2d-bold">Kata Laluan : ************</p>
                 <p class="w32 k2d-bold">No. Tel : 01X-XXXXXXX</p>
                 <p class="w32 k2d-bold">Emel : XXXXXX@gmail.com</p>
-                <button class="edit-button">Edit</button>
+                <a href="./admin-edit.php"><button class="edit-button" >Edit</button></a>
             </div>
 
             <div class="tempahan-info">
