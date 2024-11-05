@@ -54,7 +54,7 @@
             <div class="label">
                 <p class="k2d-bold">Tambah Slot</p>
             </div>
-            <form action="../backend/main.php" class="add-slot" method="POST">
+            <form action="../backend/date.php" class="add-slot" method="POST">
                 <div class="select-date">
                     <label for="date">Tarikh</label><input type="date" name="date" id="date" style="margin-left: 20px;">
                 </div>
