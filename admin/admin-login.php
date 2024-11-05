@@ -1,5 +1,6 @@
 <?php
     $link = "../";
+    $admin = "admin";
 ?>
 <!DOCTYPE html>
 <html lang="en">

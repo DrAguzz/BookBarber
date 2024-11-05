@@ -1,5 +1,6 @@
 <?php
     $link = "../";
+    $admin = "admin";
     include("../backend/config.php");
     $query = "SELECT * FROM booking";
     $sql = mysqli_query($con, $query);
