@@ -18,22 +18,23 @@
 <body bgcolor="#2F1D00">
     <?php 
         require("../component/header/header.php");
-        require("../component/navbar/nav.php");
     ?>
 
 <div class="content">
-        <div class="form-container">
+        <div class="form-container" style="width: 500px;">
+            <form action="../backend/login-admin.php" method="post">
             <div class="form-header">
                 <h3 class="k2d-bold">Log Masuk Admin</h3>
             </div>
             <div class="form">
                 <label for="" class="k2d-medium">Nama</label>
-                <input type="text">
+                <input type="text" name="nama">
                 <br><br>
                 <label for="" class="k2d-medium">Kata Laluan</label>
-                <input type="text">
+                <input type="password" name="pw">
             </div>
-            <button type="submit" class="submit-button">Simpan</button>
+            <button type="submit" class="submit-button" name="submit">Simpan</button>
+            </form>
         </div>
     </div>
 </body>

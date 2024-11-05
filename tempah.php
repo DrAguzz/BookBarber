@@ -1,5 +1,6 @@
 <?php
     $link = "./";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,20 +22,21 @@
         require("./component/navbar/nav.php");
     ?>
     <div class="content">
+        <form action="./backend/tempah.php" method="POST">
         <div class="form-container">
             <div class="form-header">
                 <h3 class="k2d-bold">Borang Tempahan Potong rambut</h3>
             </div>
             <div class="form">
                 <label for="" class="k2d-medium">Nama</label>
-                <input type="text">
+                <input type="text" name="nama">
             </div>
             <div class="form">
                 <label for="" class="k2d-medium">No Tel</label>
-                <input type="text">
+                <input type="text" name="notel">
             </div>
             <div class="form">
-                <div class="label">
+                <!-- <div class="label">
                     <p class="k2d-medium">Pilih Slot Kosong</p>
                     <p class="status k2d-medium">Status | <span class="green k2d-medium">Kosong</span> <span class="red k2d-medium">Ditempah</span></p>
                 </div>
@@ -70,10 +72,11 @@
                     <button class="button-container bc-green">
                         <p class="k2d-bold">10</p>
                     </button>
-                </div>
+                </div> -->
             </div>
-            <button type="submit" class="submit-button">Hantar</button>
+            <button type="submit" class="submit-button" name="submit">Hantar</button>
         </div>
+        </form>
     </div>
 </body>
 </html>

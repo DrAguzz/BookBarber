@@ -18,7 +18,6 @@
 <body bgcolor="#2F1D00">
     <?php 
         require("../component/header/header.php");
-        require("../component/navbar/nav.php");
     ?>
 
     <div class="main-content">
@@ -32,14 +31,14 @@
                 <a href="./admin-edit.php"><button class="edit-button" >Edit</button></a>
             </div>
 
-            <div class="tempahan-info">
-            <div class="label">
+        <div class="tempahan-info">
+            <!-- <div class="label">
                 <p class="k2d-bold">Maklumat Slot Tempahan</p>
                 <p class="status k2d-bold">Status | <span class="green k2d-bold">Kosong</span> <span class="red k2d-bold">Ditempah</span></p>
-            </div>
-            <div class="slot-box">
+            </div>  -->
+            <!-- <div class="slot-box"> -->
                 <!-- Add button-container elements for slots as needed -->
-                <button class="button-container bc-red">1</button>
+                <!-- <button class="button-container bc-red">1</button>
                 <button class="button-container bc-red">2</button>
                 <button class="button-container bc-red">3</button>
                 <button class="button-container bc-green">4</button>
@@ -48,21 +47,21 @@
                 <button class="button-container bc-green">7</button>
                 <button class="button-container bc-green">8</button>
                 <button class="button-container bc-green">9</button>
-                <button class="button-container bc-green">10</button>
+                <button class="button-container bc-green">10</button> -->
                 <!-- Continue for all slots -->
-            </div>
+            <!-- </div> -->
 
             <div class="label">
                 <p class="k2d-bold">Tambah Slot</p>
             </div>
-            <form class="add-slot" method="POST">
+            <form action="../backend/main.php" class="add-slot" method="POST">
                 <div class="select-date">
-                    <label for="date">Tarikh</label><input type="date" name="date" id="date">
+                    <label for="date">Tarikh</label><input type="date" name="date" id="date" style="margin-left: 20px;">
                 </div>
-                <div class="select-slot">
+                <!-- <div class="select-slot">
                     <label for="slot">Slot</label><input type="text" name="slot" id="slot">
-                </div>
-                <button type="submit" class="add-button">+ Tambah</button>
+                </div>-->
+                <button type="submit" name="submit" class="add-button">+ Tambah</button>
             </form>
 
             <div class="label">
@@ -108,7 +107,7 @@
                             <p class="k2d-bold">Menunggu</p>
                         </td>
                     </tr>
-                    <!-- <?php
+                     <?php
                         // Hardcoded array of booking data
                         $bookings = [
                             ["slot" => "1 | 10:30", "name" => "X-Nama Pelanggan-X", "status" => "Selesai"],
@@ -131,7 +130,7 @@
 
                             echo "</tr>";
                         }
-                    ?> -->
+                    ?> 
                 </table>
             </div>
             </div>

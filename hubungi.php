@@ -1,5 +1,9 @@
 <?php
     $link = "./";
+    include("./backend/config.php");
+    $query = "SELECT * FROM admin";
+    $sql = mysqli_query($con, $query);
+    $array = mysqli_fetch_array($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +33,9 @@
             <div class="contact-info">
                 <img src="./img/profile-icon.png" alt="Profile Icon" class="profile-icon">
                 <div class="contact-details">
-                    <p class="contact-name k2d-bold">X- Nama -X</p>
-                    <p class="contact-phone k2d-bold">01X-XXXXXXX</p>
-                    <p class="contact-email k2d-bold">XXXXXX@gmail.com</p>
+                    <p class="contact-name k2d-bold">X- <?php echo $array['name'];?> -X</p>
+                    <p class="contact-phone k2d-bold"><?php echo $array['notel'];?></p>
+                    <p class="contact-email k2d-bold"><?php echo $array['email'];?></p>
                 </div>
             </div>
 
