@@ -6,5 +6,5 @@
         $query = "INSERT INTO booking VALUE('','$nama', '$notel','','0')";
         $sql = mysqli_query($con, $query);
 
-        header("location: ../../tempah.php");
+        header("location: ../tempah.php");
 ?>
