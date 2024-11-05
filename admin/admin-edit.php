@@ -17,6 +17,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
     <title>Admin Page</title>
 </head>
+<style>
+    .back-link {
+        float: right;
+        text-align: right;
+        height: 0;
+        margin-top: 50px;
+        margin-right: 10px; /* Optional: Add spacing from the edge */
+        text-decoration: none;
+        color: #333; /* Set the color as needed */
+        font-weight: bold; /* Optional for emphasis */
+    }
+</style>
 <body bgcolor="#2F1D00">
     <?php 
         require("../component/header/header.php");
@@ -50,6 +62,7 @@
                 <input type="text" value="<?php echo $row['email']; ?>">
             </div>
             <button type="submit" class="submit-button">Simpan</button>
+            <a href="javascript:history.back()" class="back-link">Kembali</a>
         </form>
     </div>
 </body>
