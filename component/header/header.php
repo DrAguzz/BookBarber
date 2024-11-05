@@ -5,5 +5,5 @@
         </div>
         <div class="text"><h1 class="k2d-bold">Barber Book</h1></div>
         <!-- Admin login link -->
-        <a href="<?php echo $link; ?>Admin/admin-login.php" class="admin-link">Admin</a>
+        <a href="<?php echo $link; ?>Admin/admin-login.php" class="admin-link"><?php if($admin == "admin"){ echo "Login"; }else{ echo "Login";} ?></a>
     </div>

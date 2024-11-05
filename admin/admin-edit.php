@@ -1,6 +1,7 @@
 <?php
     include('../backend/config.php');
     $link = "../";
+    $admin = "admin";
 ?>
 <!DOCTYPE html>
 <html lang="en">
