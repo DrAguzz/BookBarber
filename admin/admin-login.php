@@ -1,5 +1,6 @@
 <?php
     $link = "../";
+    include('../backend/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,5 @@
 <?php
+include('../backend/config.php');
     $link = "../";
 ?>
 <!DOCTYPE html>
@@ -32,29 +33,11 @@
             </div>
 
         <div class="tempahan-info">
-            <!-- <div class="label">
-                <p class="k2d-bold">Maklumat Slot Tempahan</p>
-                <p class="status k2d-bold">Status | <span class="green k2d-bold">Kosong</span> <span class="red k2d-bold">Ditempah</span></p>
-            </div>  -->
-            <!-- <div class="slot-box"> -->
-                <!-- Add button-container elements for slots as needed -->
-                <!-- <button class="button-container bc-red">1</button>
-                <button class="button-container bc-red">2</button>
-                <button class="button-container bc-red">3</button>
-                <button class="button-container bc-green">4</button>
-                <button class="button-container bc-green">5</button>
-                <button class="button-container bc-green">6</button>
-                <button class="button-container bc-green">7</button>
-                <button class="button-container bc-green">8</button>
-                <button class="button-container bc-green">9</button>
-                <button class="button-container bc-green">10</button> -->
-                <!-- Continue for all slots -->
-            <!-- </div> -->
 
             <div class="label">
                 <p class="k2d-bold">Tambah Slot</p>
             </div>
-            <form action="../backend/date.php" class="add-slot" method="POST">
+            <form action="../backend/main.php" class="add-slot" method="POST">
                 <div class="select-date">
                     <label for="date">Tarikh</label><input type="date" name="date" id="date" style="margin-left: 20px;">
                 </div>
@@ -74,7 +57,7 @@
                         <th class="k2d-bold">Nama Pelanggan</th>
                         <th class="k2d-bold">Status</th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>
                             <button class="button-container bc-red k2d-bold">1 | 10:30</button>
                         </td>
@@ -106,28 +89,27 @@
                         <td>
                             <p class="k2d-bold">Menunggu</p>
                         </td>
-                    </tr>
-                     <?php
-                        // Hardcoded array of booking data
-                        $bookings = [
-                            ["slot" => "1 | 10:30", "name" => "X-Nama Pelanggan-X", "status" => "Selesai"],
-                            ["slot" => "2 | 11:00", "name" => "X-Nama Pelanggan-X", "status" => "Menunggu"],
-                            ["slot" => "3 | 11:30", "name" => "X-Nama Pelanggan-X", "status" => "Menunggu"]
-                        ];
+                    </tr> -->
+                    <?php
+                         // Loop through each booking and create a table row
+                        $list = mysqli_query($con, "SELECT s.id as slot_id, s.date , b.nama_pelanggan, b.status FROM slot s LEFT JOIN booking b ON s.id = b.id ORDER BY s.id");
 
-                        // Loop through each booking and create a table row
-                        foreach ($bookings as $booking) {
+                        while ($row = mysqli_fetch_array($list)) {
+
                             echo "<tr>";
-                            echo "<td class=\"button-container k2d-bold\">" . htmlspecialchars($booking['slot']) . "</td>";
-                            echo "<td>" . htmlspecialchars($booking['name']) . "</td>";
-
-                            // Display the status with color coding
-                            if ($booking['status'] == 'Selesai') {
-                                echo "<td><span class='green'>" . htmlspecialchars($booking['status']) . "</span></td>";
+                            echo "<td><div class=\"button-container k2d-bold bc-red\">".$row['slot_id']."|".$row['date']."</div></td>";
+                            echo "<td>" . $row['nama_pelanggan'] . "</td>";
+                            
+                            $status = "";
+                            if ($row["nama_pelanggan"]) {
+                                if ($row["status"] == 0) {
+                                    $status = "Menunggu";
+                                }
                             } else {
-                                echo "<td><span class='red'>" . htmlspecialchars($booking['status']) . "</span></td>";
+                                $status = "Selesai";
                             }
 
+                            echo "<td>" . $status . "</td>";
                             echo "</tr>";
                         }
                     ?> 
