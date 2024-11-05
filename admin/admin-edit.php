@@ -1,4 +1,5 @@
 <?php
+    include('../backend/config.php');
     $link = "../";
     $admin = "admin";
 ?>
@@ -21,16 +22,20 @@
         require("../component/header/header.php");
     ?>
 
-<div class="content">
-        <div class="form-container">
+    <div class="content">
+        <form class="form-container" >
             <div class="form-header">
                 <h3 class="k2d-bold">Edit Admin</h3>
                 <br>
                 <img src="../img/profile-icon.png" alt="Profile Icon">
             </div>
             <div class="form">
+                <?php
+                    $result = mysqli_query($con, "SELECT * FROM admin WHERE id = 1");
+                    $row = mysqli_fetch_array($result);
+                ?>
                 <label for="" class="k2d-medium">Nama</label>
-                <input type="text">
+                <input type="text" value="<?php echo $row['name']; ?>">
                 <br><br>
                 <label for="" class="k2d-medium">Kata Laluan Baru</label>
                 <input type="text">
@@ -39,13 +44,13 @@
                 <input type="text">
                 <br><br>
                 <label for="" class="k2d-medium">No. Tel</label>
-                <input type="text">
+                <input type="text"value="<?php echo $row['notel']; ?>">
                 <br><br>
                 <label for="" class="k2d-medium">Emel</label>
-                <input type="text">
+                <input type="text" value="<?php echo $row['email']; ?>">
             </div>
             <button type="submit" class="submit-button">Simpan</button>
-        </div>
+        </form>
     </div>
 </body>
 </html>

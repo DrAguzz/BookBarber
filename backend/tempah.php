@@ -1,5 +1,5 @@
 <?php
-    include("config.php");
+    include("./config.php");
         $nama = $_POST['nama'];
         $notel = $_POST['notel'];
 

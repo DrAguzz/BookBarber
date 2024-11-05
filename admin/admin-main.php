@@ -1,4 +1,5 @@
 <?php
+include('../backend/config.php');
     $link = "../";
     $admin = "admin";
     include("../backend/config.php");
@@ -36,10 +37,14 @@
             </div>
 
         <div class="tempahan-info">
+<<<<<<< HEAD
+
+=======
+>>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
             <div class="label">
                 <p class="k2d-bold">Tambah Slot</p>
             </div>
-            <form action="../backend/date.php" class="add-slot" method="POST">
+            <form action="../backend/main.php" class="add-slot" method="POST">
                 <div class="select-date">
                     <label for="date">Tarikh</label><input type="date" name="date" id="date" style="margin-left: 20px;">
                 </div>
@@ -56,11 +61,15 @@
                         <th class="k2d-bold">Nama Pelanggan</th>
                         <th class="k2d-bold">Status</th>
                     </tr>
+<<<<<<< HEAD
+                    <!-- <tr>
+=======
                     <?php
                         $bil = 1; 
                         while($row = mysqli_fetch_array($sql)){
                     ?>
                     <tr>
+>>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
                         <td>
                             <button class="button-container k2d-bold <?php echo ($row['status'] == 0) ? "bc-red" : "bc-green"; ?>"><?php echo $bil;?></button>
                         </td>
@@ -75,8 +84,54 @@
                             <p class="k2d-bold"><?php echo ($row['status'] == 0) ? "Menunggu" : "Selesai"; ?></p>
                         </td>
                     </tr>
+<<<<<<< HEAD
+                    <tr>
+                        <td>
+                            <button class="button-container bc-red k2d-bold">2 | 11:00</button>
+                        </td>
+                        <td>
+                            <p class="k2d-bold">X-Nama Pelanggan-X</p>
+                        </td>
+                        <td>
+                            <p class="k2d-bold">Selesai</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="button-container bc-red k2d-bold">3 | 11:30</button>
+                        </td>
+                        <td>
+                            <p class="k2d-bold">X-Nama Pelanggan-X</p>
+                        </td>
+                        <td>
+                            <p class="k2d-bold">Menunggu</p>
+                        </td>
+                    </tr> -->
+                    <?php
+                         // Loop through each booking and create a table row
+                        $list = mysqli_query($con, "SELECT s.id as slot_id, s.date , b.nama_pelanggan, b.status FROM slot s LEFT JOIN booking b ON s.id = b.id ORDER BY s.id");
+
+                        while ($row = mysqli_fetch_array($list)) {
+
+                            echo "<tr>";
+                            echo "<td><div class=\"button-container k2d-bold bc-red\">".$row['slot_id']."|".$row['date']."</div></td>";
+                            echo "<td>" . $row['nama_pelanggan'] . "</td>";
+                            
+                            $status = "";
+                            if ($row["nama_pelanggan"]) {
+                                if ($row["status"] == 0) {
+                                    $status = "Menunggu";
+                                }
+                            } else {
+                                $status = "Selesai";
+                            }
+
+                            echo "<td>" . $status . "</td>";
+                            echo "</tr>";
+=======
                     <?php        
                         $bil++;
+>>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
                         }
                     ?>
                 </table>
