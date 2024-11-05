@@ -1,5 +1,8 @@
 <?php
     $link = "../";
+    include("../backend/config.php");
+    $query = "SELECT * FROM booking";
+    $sql = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,25 +35,6 @@
             </div>
 
         <div class="tempahan-info">
-            <!-- <div class="label">
-                <p class="k2d-bold">Maklumat Slot Tempahan</p>
-                <p class="status k2d-bold">Status | <span class="green k2d-bold">Kosong</span> <span class="red k2d-bold">Ditempah</span></p>
-            </div>  -->
-            <!-- <div class="slot-box"> -->
-                <!-- Add button-container elements for slots as needed -->
-                <!-- <button class="button-container bc-red">1</button>
-                <button class="button-container bc-red">2</button>
-                <button class="button-container bc-red">3</button>
-                <button class="button-container bc-green">4</button>
-                <button class="button-container bc-green">5</button>
-                <button class="button-container bc-green">6</button>
-                <button class="button-container bc-green">7</button>
-                <button class="button-container bc-green">8</button>
-                <button class="button-container bc-green">9</button>
-                <button class="button-container bc-green">10</button> -->
-                <!-- Continue for all slots -->
-            <!-- </div> -->
-
             <div class="label">
                 <p class="k2d-bold">Tambah Slot</p>
             </div>
@@ -58,9 +42,6 @@
                 <div class="select-date">
                     <label for="date">Tarikh</label><input type="date" name="date" id="date" style="margin-left: 20px;">
                 </div>
-                <!-- <div class="select-slot">
-                    <label for="slot">Slot</label><input type="text" name="slot" id="slot">
-                </div>-->
                 <button type="submit" name="submit" class="add-button">+ Tambah</button>
             </form>
 
@@ -74,63 +55,29 @@
                         <th class="k2d-bold">Nama Pelanggan</th>
                         <th class="k2d-bold">Status</th>
                     </tr>
+                    <?php
+                        $bil = 1; 
+                        while($row = mysqli_fetch_array($sql)){
+                    ?>
                     <tr>
                         <td>
-                            <button class="button-container bc-red k2d-bold">1 | 10:30</button>
+                            <button class="button-container k2d-bold <?php echo ($row['status'] == 0) ? "bc-red" : "bc-green"; ?>"><?php echo $bil;?></button>
                         </td>
                         <td>
-                            <p class="k2d-bold">X-Nama Pelanggan-X</p>
+                            <p style="color: black;">
+                                <a href="https://www.wasap.my/6<?php echo htmlspecialchars($row['Notel_Pelanggan']); ?>/Awal%20nak%20potong%20X" style="color: black; text-decoration: underline;" class="k2d-bold">
+                                    <?php echo htmlspecialchars($row['nama_pelanggan']); ?>
+                                </a>
+                            </p>
                         </td>
                         <td>
-                            <p class="k2d-bold">Selesai</p>
+                            <p class="k2d-bold"><?php echo ($row['status'] == 0) ? "Menunggu" : "Selesai"; ?></p>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <button class="button-container bc-red k2d-bold">2 | 11:00</button>
-                        </td>
-                        <td>
-                            <p class="k2d-bold">X-Nama Pelanggan-X</p>
-                        </td>
-                        <td>
-                            <p class="k2d-bold">Selesai</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="button-container bc-red k2d-bold">3 | 11:30</button>
-                        </td>
-                        <td>
-                            <p class="k2d-bold">X-Nama Pelanggan-X</p>
-                        </td>
-                        <td>
-                            <p class="k2d-bold">Menunggu</p>
-                        </td>
-                    </tr>
-                     <?php
-                        // Hardcoded array of booking data
-                        $bookings = [
-                            ["slot" => "1 | 10:30", "name" => "X-Nama Pelanggan-X", "status" => "Selesai"],
-                            ["slot" => "2 | 11:00", "name" => "X-Nama Pelanggan-X", "status" => "Menunggu"],
-                            ["slot" => "3 | 11:30", "name" => "X-Nama Pelanggan-X", "status" => "Menunggu"]
-                        ];
-
-                        // Loop through each booking and create a table row
-                        foreach ($bookings as $booking) {
-                            echo "<tr>";
-                            echo "<td class=\"button-container k2d-bold\">" . htmlspecialchars($booking['slot']) . "</td>";
-                            echo "<td>" . htmlspecialchars($booking['name']) . "</td>";
-
-                            // Display the status with color coding
-                            if ($booking['status'] == 'Selesai') {
-                                echo "<td><span class='green'>" . htmlspecialchars($booking['status']) . "</span></td>";
-                            } else {
-                                echo "<td><span class='red'>" . htmlspecialchars($booking['status']) . "</span></td>";
-                            }
-
-                            echo "</tr>";
+                    <?php        
+                        $bil++;
                         }
-                    ?> 
+                    ?>
                 </table>
             </div>
             </div>
