@@ -1,6 +1,9 @@
 <?php
 include('../backend/config.php');
     $link = "../";
+    include("../backend/config.php");
+    $query = "SELECT * FROM booking";
+    $sql = mysqli_query($con, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +36,10 @@ include('../backend/config.php');
             </div>
 
         <div class="tempahan-info">
+<<<<<<< HEAD
 
+=======
+>>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
             <div class="label">
                 <p class="k2d-bold">Tambah Slot</p>
             </div>
@@ -41,9 +47,6 @@ include('../backend/config.php');
                 <div class="select-date">
                     <label for="date">Tarikh</label><input type="date" name="date" id="date" style="margin-left: 20px;">
                 </div>
-                <!-- <div class="select-slot">
-                    <label for="slot">Slot</label><input type="text" name="slot" id="slot">
-                </div>-->
                 <button type="submit" name="submit" class="add-button">+ Tambah</button>
             </form>
 
@@ -57,17 +60,30 @@ include('../backend/config.php');
                         <th class="k2d-bold">Nama Pelanggan</th>
                         <th class="k2d-bold">Status</th>
                     </tr>
+<<<<<<< HEAD
                     <!-- <tr>
+=======
+                    <?php
+                        $bil = 1; 
+                        while($row = mysqli_fetch_array($sql)){
+                    ?>
+                    <tr>
+>>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
                         <td>
-                            <button class="button-container bc-red k2d-bold">1 | 10:30</button>
+                            <button class="button-container k2d-bold <?php echo ($row['status'] == 0) ? "bc-red" : "bc-green"; ?>"><?php echo $bil;?></button>
                         </td>
                         <td>
-                            <p class="k2d-bold">X-Nama Pelanggan-X</p>
+                            <p style="color: black;">
+                                <a href="https://www.wasap.my/6<?php echo htmlspecialchars($row['Notel_Pelanggan']); ?>/Awal%20nak%20potong%20X" style="color: black; text-decoration: underline;" class="k2d-bold">
+                                    <?php echo htmlspecialchars($row['nama_pelanggan']); ?>
+                                </a>
+                            </p>
                         </td>
                         <td>
-                            <p class="k2d-bold">Selesai</p>
+                            <p class="k2d-bold"><?php echo ($row['status'] == 0) ? "Menunggu" : "Selesai"; ?></p>
                         </td>
                     </tr>
+<<<<<<< HEAD
                     <tr>
                         <td>
                             <button class="button-container bc-red k2d-bold">2 | 11:00</button>
@@ -111,8 +127,12 @@ include('../backend/config.php');
 
                             echo "<td>" . $status . "</td>";
                             echo "</tr>";
+=======
+                    <?php        
+                        $bil++;
+>>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
                         }
-                    ?> 
+                    ?>
                 </table>
             </div>
             </div>
