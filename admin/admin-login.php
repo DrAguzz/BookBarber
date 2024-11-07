@@ -1,6 +1,6 @@
 <?php
     $link = "../";
-    $admin = "admin";
+    $admin ="";
     include('../backend/config.php');
 ?>
 <!DOCTYPE html>

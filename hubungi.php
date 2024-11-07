@@ -1,6 +1,7 @@
 <?php
     $link = "./";
     include("./backend/config.php");
+    $admin ="";
     $query = "SELECT * FROM admin";
     $sql = mysqli_query($con, $query);
     $array = mysqli_fetch_array($sql);
