@@ -29,7 +29,7 @@ include('../backend/config.php');
         <div class="content">
             <div class="admin-info">
                 <img src="../img/profile-icon.png" alt="Profile Icon">
-                <p class="w32 k2d-bold">Nama : X- Nama -X</p>
+                <p class="w32 k2d-bold">Nama : X- Nama -X<?php ?></p>
                 <p class="w32 k2d-bold">Kata Laluan : ************</p>
                 <p class="w32 k2d-bold">No. Tel : 01X-XXXXXXX</p>
                 <p class="w32 k2d-bold">Emel : XXXXXX@gmail.com</p>
@@ -128,11 +128,9 @@ include('../backend/config.php');
 
                             echo "<td>" . $status . "</td>";
                             echo "</tr>";
-=======
-                    <?php        
                         $bil++;
->>>>>>> be03cfd264d83abff42faeb9607ea7f7356c7021
                         }
+                    }
                     ?>
                 </table>
             </div>
